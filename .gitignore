@@ -1,12 +1,14 @@
-# Ignore system files
+
+# System files
 .DS_Store
 Thumbs.db
 
-# Ignore editor/IDE files
+# IDE/editor folders (if any)
 .vscode/
-*.sublime-project
-*.sublime-workspace
+.idea/
 
-# Ignore temporary files
+# Node modules (if you ever use npm)
+node_modules/
+
+# Log files
 *.log
-*.tmp
