@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,12 +72,12 @@ html, body {
 /* Animal Thumbnails Grid */
 #animal-thumbnails {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: 1fr; /* one per row */
     gap: 20px;
     justify-items: center;
-    margin: 0 auto 120px auto;
+    margin: 0 auto 180px auto; /* extra bottom margin for bottom tabs */
     padding: 20px;
-    max-width: 1000px;
+    max-width: 400px; /* smaller thumbnails */
     position: relative;
     z-index: 10;
 }
@@ -118,8 +117,9 @@ html, body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     #animal-thumbnails {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        max-width: 300px;
         gap: 15px;
+        margin-bottom: 160px; /* medium screen spacing */
     }
     .animal-item img {
         width: 100px;
@@ -131,8 +131,9 @@ html, body {
 
 @media (max-width: 480px) {
     #animal-thumbnails {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        max-width: 250px;
         gap: 10px;
+        margin-bottom: 140px; /* small screen spacing */
     }
     .animal-item img {
         width: 80px;
@@ -152,6 +153,7 @@ html, body {
 
 <!-- Top Tabs -->
 <div id="tabs-top">
+    <span>ANIMALS</span> <!-- static, non-clickable -->
     <a href="places.html">PLACES</a>
     <a href="map.html">MAP</a>
 </div>
