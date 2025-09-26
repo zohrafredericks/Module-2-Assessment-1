@@ -1,146 +1,220 @@
 
- 
-/* BODY */
-body {
-  margin: 0;
-  font-family: 'Baloo 2', cursive;
-  background-color: #fff;
-  text-align: center;
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* HEADER */
+body, html {
+    font-family: 'Baloo 2', cursive;
+    background: url('images/map.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header */
 #header {
-  text-align: center;
-  padding: 10px;
-  background-color: #f2c94c; /* yellow/brown */
-  border: 2px solid #8b5a2b;
-  border-radius: 12px;
-  width: 90%;
-  margin: 15px auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #f3d25d; /* yellow/brown background */
 }
 
 #header img {
-  height: 60px;
+    max-height: 80px;
 }
 
-/* MAIN HEADING */
-h1 {
-  font-size: 1.6rem;
-  color: #2e4600;
-  margin: 10px 0 15px 0;
-  letter-spacing: 1px;
-  font-weight: 700;
-}
-
-/* TOP NAVIGATION TABS */
+/* Top Tabs */
 #tabs-top {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0 20px 0;
+    display: flex;
+    justify-content: space-around;
+    background: forestgreen;
 }
 
 #tabs-top a {
-  flex: 1;
-  max-width: 140px;
-  margin: 3px;
-  padding: 8px;
-  background: forestgreen;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-family: 'Baloo 2', cursive;
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
 }
 
 #tabs-top a:hover {
-  background: darkgreen;
+    background: darkgreen;
 }
 
-/* MAP CONTAINER */
-#map-container {
-  position: relative;
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto 20px auto;
-}
-
-/* MAP IMAGE */
-#zoo-map {
-  width: 100%;
-  height: auto;
-  border: 2px solid #8b5a2b;
-  border-radius: 12px;
-  display: block;
-}
-
-/* ANIMAL THUMBNAILS GRID */
-#animal-thumbnails {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  gap: 10px;
-  width: 90%;
-  margin: 10px auto;
-}
-
-#animal-thumbnails a img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;  /* rounded rectangles */
-  border: 2px solid #ffcc00;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-#animal-thumbnails a:hover img {
-  transform: scale(1.1);
-  border-color: #ff9900;
-  cursor: pointer;
-}
-
-/* BOTTOM NAVIGATION TABS */
+/* Bottom Tabs */
 #tabs-bottom {
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 5px 0;
-  background: #f2c94c;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-  z-index: 20;
+    display: flex;
+    justify-content: space-around;
+    background: forestgreen;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 #tabs-bottom a {
-  flex: 1;
-  max-width: 140px;
-  margin: 3px;
-  padding: 8px;
-  background: forestgreen;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-family: 'Baloo 2', cursive;
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-right: 1px solid #fff;
+    transition: background 0.3s;
+}
+
+#tabs-bottom a:last-child {
+    border-right: none;
 }
 
 #tabs-bottom a:hover {
-  background: darkgreen;
+    background: darkgreen;
 }
 
-/* MEDIA QUERIES */
-
-/* Tablets (600px - 900px) */
-@media (min-width: 600px) and (max-width: 900px) {
-  h1 { font-size: 2rem; }
-  #animal-thumbnails { grid-template-columns: repeat(6, 1fr); }
-  #tabs-top a, #tabs-bottom a { font-size: 1rem; }
+/* Map Container */
+#map-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px 70px; /* bottom padding to avoid bottom tabs */
 }
 
-/* Laptops / Desktops (901px+) */
-@media (min-width: 901px) {
-  h1 { font-size: 2.2rem; }
-  #animal-thumbnails { grid-template-columns: repeat(8, 1fr); }
-  #tabs-top a, #tabs-bottom a { font-size: 1.1rem; }
+/* Animal Thumbnails Grid */
+#animal-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+#animal-thumbnails a img {
+    width: 100%;
+    height: auto;
+    border: 3px solid forestgreen;
+    border-radius: 8px; /* rounded corners, not circles */
+    display: block;
+    transition: transform 0.3s;
+}
+
+#animal-thumbnails a img:hover {
+    transform: scale(1.05);
+}
+
+/* Main Content Areas for other pages */
+#main, #content {
+    max-width: 1200px;
+    margin: 20px auto 80px auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+}
+
+h1, h2, h3 {
+    font-family: 'Baloo 2', cursive;
+    color: #572800;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+p, li {
+    font-family: 'Baloo 2', cursive;
+    color: #131313;
+    line-height: 1.5;
+}
+
+/* Info Box Styling (Places & Locations) */
+a.info-box {
+    text-decoration: none;
+    background: rgba(255, 225, 55, 0.8);
+    width: 90%;
+    display: block;
+    margin: 12px auto;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+a.info-box:hover {
+    background: rgba(255, 225, 55, 1);
+}
+
+.info-box img {
+    height: 70px;
+    margin: 10px;
+    float: left;
+    border: 3px solid #8B5E3C;
+    border-radius: 8px;
+}
+
+.info-box h3 {
+    color: #572800;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+}
+
+.info-box p {
+    margin: 0;
+}
+
+/* Weather Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td {
+    padding: 5px;
+    text-align: center;
+}
+
+.info-box-weather-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Feedback Form Inputs */
+input[type="text"], input[type="email"], textarea {
+    width: 95%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid forestgreen;
+    border-radius: 6px;
+    font-family: 'Baloo 2', cursive;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: forestgreen;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+a.button:hover {
+    background: darkgreen;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #tabs-top, #tabs-bottom {
+        flex-direction: column;
+    }
+
+    #animal-thumbnails {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
 }
