@@ -1,7 +1,6 @@
 
 
 
-
 /* -------------------------------
    Global Reset
 --------------------------------*/
@@ -13,7 +12,7 @@
 
 body, html {
     font-family: 'Baloo 2', cursive;
-    background: url('images/map.png') no-repeat center center fixed;
+    background: url('images/map-blur.png') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -23,7 +22,7 @@ body, html {
 #header {
     text-align: center;
     padding: 15px;
-    background-color: #f3d25d; /* yellow/brown */
+    background-color: rgba(243, 210, 93, 0.9);
     position: relative;
     z-index: 10;
 }
@@ -91,53 +90,65 @@ body, html {
 }
 
 /* -------------------------------
-   Animal Thumbnails Container
+   Section Heading
+--------------------------------*/
+.section-title {
+    text-align: center;
+    color: #572800;
+    font-family: 'Baloo 2', cursive;
+    margin: 20px 0 10px 0;
+    font-size: 2rem;
+}
+
+/* -------------------------------
+   Animal Thumbnails Grid
 --------------------------------*/
 #animal-thumbnails {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;           /* slightly bigger spacing */
-    width: 90%;
-    max-width: 350px;    /* keeps them centered */
-    margin: 20px auto 150px auto;  /* extra bottom margin to prevent overlap with bottom tabs */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin: 0 auto 120px auto;
+    padding: 20px;
+    max-width: 1000px;
     position: relative;
     z-index: 10;
 }
 
-/* -------------------------------
-   Individual Animal Card
---------------------------------*/
+/* Individual Animal Card (non-clickable) */
 .animal-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
     text-decoration: none;
-    color: black;
+    color: inherit;
     font-family: 'Baloo 2', cursive;
-    transition: transform 0.3s, background 0.3s;
-    padding: 12px 15px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    z-index: 10;
+    padding: 12px;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 .animal-item img {
-    width: 80px;
+    width: 120px;
     height: auto;
-    border: 3px solid forestgreen;
     border-radius: 8px;
+    border: 3px solid forestgreen;
 }
 
 .animal-item:hover {
     transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
-/* Animal name styling */
 .animal-name {
-    font-size: 1.2rem;
+    margin-top: 8px;
+    font-size: 1.1rem;
     font-weight: 700;
+    text-align: center;
 }
 
 /* -------------------------------
@@ -149,18 +160,12 @@ body, html {
     }
 
     #animal-thumbnails {
-        max-width: 90%;
-        gap: 20px;
-    }
-
-    .animal-item {
-        flex-direction: row;
-        gap: 10px;
-        padding: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 15px;
     }
 
     .animal-item img {
-        width: 60px;
+        width: 100px;
     }
 
     .animal-name {
@@ -169,15 +174,16 @@ body, html {
 }
 
 @media (max-width: 480px) {
+    #animal-thumbnails {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px;
+    }
+
     .animal-item img {
-        width: 50px;
+        width: 80px;
     }
 
     .animal-name {
-        font-size: 0.9rem;
-    }
-
-    #animal-thumbnails {
-        gap: 15px;
+        font-size: 0.95rem;
     }
 }
