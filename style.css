@@ -1,5 +1,7 @@
 
-/* Body */
+
+
+/* BODY */
 body {
   margin: 0;
   font-family: 'Baloo 2', cursive;
@@ -7,11 +9,11 @@ body {
   text-align: center;
 }
 
-/* Header */
+/* HEADER */
 #header {
   text-align: center;
   padding: 10px;
-  background-color: #f2c94c; /* yellow/brown background */
+  background-color: #f2c94c; /* yellow/brown */
   border: 2px solid #8b5a2b;
   border-radius: 12px;
   width: 90%;
@@ -22,72 +24,23 @@ body {
   height: 60px;
 }
 
-/* Headings */
+/* MAIN HEADING */
 h1 {
   font-size: 1.6rem;
   color: #2e4600;
-  margin: 10px 0 5px 0;
+  margin: 10px 0 15px 0;
   letter-spacing: 1px;
   font-weight: 700;
 }
 
-h2 {
-  font-size: 1.3rem;
-  color: #f2a12d;
-  margin: 5px 0;
-  letter-spacing: 0.5px;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 1.1rem;
-  color: #ff6f61;
-  margin: 5px 0 15px 0;
-  font-weight: 600;
-}
-
-/* Map */
-#zoo-map {
-  width: 90%;
-  max-width: 600px;
-  height: auto;
-  border: 2px solid #8b5a2b;
-  border-radius: 12px;
-  margin: 10px auto;
-  display: block;
-}
-
-/* Animal thumbnails grid */
-#animal-thumbnails {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  gap: 10px;
-  width: 90%;
-  max-width: 600px;
-  margin: 15px auto;
-}
-
-#animal-thumbnails a img {
-  width: 100%;
-  border-radius: 50%;
-  border: 2px solid #ffcc00;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-#animal-thumbnails a:hover img {
-  transform: scale(1.2) translateY(-5px); /* bounce/scale effect */
-  border-color: #ff9900;
-  cursor: pointer;
-}
-
-/* Top and bottom navigation tabs */
-#tabs-top, #tabs-bottom {
+/* TOP NAVIGATION TABS */
+#tabs-top {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  margin: 10px 0 20px 0;
 }
 
-#tabs-top a, #tabs-bottom a {
+#tabs-top a {
   flex: 1;
   max-width: 140px;
   margin: 3px;
@@ -101,14 +54,115 @@ h3 {
   font-family: 'Baloo 2', cursive;
 }
 
-#tabs-top a:hover, #tabs-bottom a:hover {
+#tabs-top a:hover {
   background: darkgreen;
 }
 
-/* Bottom tabs fixed */
+/* MAP CONTAINER */
+#map-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px; /* scales on larger screens */
+  margin: 0 auto 20px auto;
+}
+
+/* MAP IMAGE */
+#zoo-map {
+  width: 100%;
+  height: auto;
+  border: 2px solid #8b5a2b;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ANIMAL THUMBNAILS GRID */
+#animal-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 8px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  z-index: 10; /* above map */
+}
+
+#animal-thumbnails a img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid #ffcc00;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+#animal-thumbnails a:hover img {
+  transform: scale(1.2) translateY(-5px);
+  border-color: #ff9900;
+  cursor: pointer;
+}
+
+/* BOTTOM NAVIGATION TABS */
 #tabs-bottom {
+  display: flex;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  padding: 5px 0;
+  background: #f2c94c; /* optional light background for contrast */
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+
+#tabs-bottom a {
+  flex: 1;
+  max-width: 140px;
+  margin: 3px;
+  padding: 8px;
+  background: forestgreen;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Baloo 2', cursive;
+}
+
+#tabs-bottom a:hover {
+  background: darkgreen;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablets (600px - 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+  }
+  #animal-thumbnails {
+    grid-template-columns: repeat(6, 1fr);
+    top: 8%;
+    left: 5%;
+    width: 90%;
+  }
+  #tabs-top a, #tabs-bottom a {
+    font-size: 1rem;
+  }
+}
+
+/* Laptops / Desktops (901px and above) */
+@media (min-width: 901px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  #animal-thumbnails {
+    grid-template-columns: repeat(8, 1fr);
+    top: 10%;
+    left: 5%;
+    width: 90%;
+  }
+  #tabs-top a, #tabs-bottom a {
+    font-size: 1.1rem;
+  }
 }
