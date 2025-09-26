@@ -1,5 +1,7 @@
 
 
+
+
 /* -------------------------------
    Global Reset
 --------------------------------*/
@@ -13,6 +15,7 @@ body, html {
     font-family: 'Baloo 2', cursive;
     background: url('images/map-blur.png') no-repeat center center fixed;
     background-size: cover;
+    height: 100%;
 }
 
 /* -------------------------------
@@ -89,7 +92,7 @@ body, html {
 }
 
 /* -------------------------------
-   Section Heading
+   Section Headings
 --------------------------------*/
 .section-title {
     text-align: center;
@@ -114,7 +117,7 @@ body, html {
     z-index: 10;
 }
 
-/* Individual Animal Card (non-clickable) */
+/* Individual Animal Item */
 .animal-item {
     display: flex;
     flex-direction: column;
@@ -125,10 +128,6 @@ body, html {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     position: relative;
     z-index: 10;
-    padding: 12px;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 .animal-item img {
@@ -140,7 +139,7 @@ body, html {
 
 .animal-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 .animal-name {
@@ -151,7 +150,132 @@ body, html {
 }
 
 /* -------------------------------
-   Responsive Adjustments
+   Main Content (for places, map, weather, feedback)
+--------------------------------*/
+#main, #content {
+    max-width: 1200px;
+    margin: 20px auto 100px auto;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    font-family: 'Baloo 2', cursive;
+}
+
+h1, h2, h3 {
+    font-family: 'Baloo 2', cursive;
+    color: #572800;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+p, li {
+    font-family: 'Baloo 2', cursive;
+    color: #131313;
+    line-height: 1.5;
+}
+
+/* -------------------------------
+   Info Box Styling (Places & Locations)
+--------------------------------*/
+a.info-box {
+    text-decoration: none;
+    background: rgba(255, 225, 55, 0.8);
+    width: 90%;
+    display: block;
+    margin: 12px auto;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+a.info-box:hover {
+    background: rgba(255, 225, 55, 1);
+}
+
+.info-box img {
+    height: 70px;
+    margin: 10px;
+    float: left;
+    border: 3px solid #8B5E3C;
+    border-radius: 8px;
+}
+
+.info-box h3 {
+    color: #572800;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+}
+
+.info-box p {
+    margin: 0;
+}
+
+/* -------------------------------
+   Weather Table
+--------------------------------*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td {
+    padding: 5px;
+    text-align: center;
+}
+
+.info-box-weather-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* -------------------------------
+   Feedback Form Inputs
+--------------------------------*/
+input[type="text"], input[type="email"], textarea {
+    width: 95%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid forestgreen;
+    border-radius: 6px;
+    font-family: 'Baloo 2', cursive;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: forestgreen;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+a.button:hover {
+    background: darkgreen;
+}
+
+/* -------------------------------
+   Map Page Images
+--------------------------------*/
+#map-page #main #content img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* -------------------------------
+   Responsive
 --------------------------------*/
 @media (max-width: 768px) {
     #tabs-top, #tabs-bottom {
