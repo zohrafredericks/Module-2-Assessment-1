@@ -4,45 +4,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pine City Zoo - Places</title>
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pine City Zoo - Places</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Master CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body { font-family: 'Baloo 2', cursive; margin:0; padding:0; background:#f7f7f7; }
+    #header { text-align:center; padding:15px; background-color: rgba(243,210,93,0.9); }
+    #header img { max-height:80px; }
+    #tabs-top, #tabs-bottom { display:flex; justify-content:space-around; background:forestgreen; flex-wrap:wrap; }
+    #tabs-top a, #tabs-bottom a { flex:1; padding:12px 0; text-align:center; color:white; font-weight:bold; text-decoration:none; transition: background 0.3s; }
+    #tabs-top a:hover, #tabs-bottom a:hover { background: darkgreen; }
+    #tabs-bottom { position:fixed; bottom:0; width:100%; z-index:3; }
+    #thumbnails { display:flex; justify-content:center; flex-wrap:wrap; gap:20px; margin:20px 0; }
+    .thumb-item { text-align:center; text-decoration:none; color:#000; }
+    .thumb-item img { width:150px; height:100px; border-radius:10px; border:3px solid forestgreen; transition: transform 0.3s; }
+    .thumb-item img:hover { transform: scale(1.05); }
+    .thumb-item span { display:block; margin-top:8px; font-weight:bold; }
+    .place-section { max-width:900px; margin:40px auto; padding:20px; background: rgba(255,255,255,0.9); border-radius:10px; text-align:center; }
+    .place-section img { width:100%; max-width:800px; height:auto; border-radius:10px; border:3px solid forestgreen; margin-bottom:15px; }
+    .place-section h2 { color:#572800; margin-bottom:10px; }
+    .place-section p { line-height:1.5; color:#131313; }
+  </style>
 </head>
 <body>
 
-<!-- Header -->
-<div id="header">
+  <!-- Header -->
+  <div id="header">
     <img src="images/logo.png" alt="Pine City Zoo Logo">
-</div>
+  </div>
 
-<!-- Top Tabs -->
-<div id="tabs-top">
-    <a href="places.html">PLACES</a>
+  <!-- Top Tabs -->
+  <div id="tabs-top">
+    <a href="index.html">HOME</a>
     <a href="map.html">MAP</a>
-</div>
+  </div>
 
-<!-- Main Content -->
-<div id="main-content">
-    <!-- ANIMALS heading removed -->
+  <!-- Thumbnails -->
+  <div id="thumbnails">
+    <a href="#amphitheatre" class="thumb-item">
+      <img src="images/amphitheatre-tn.png" alt="Amphitheatre">
+      <span>Amphitheatre</span>
+    </a>
+    <a href="#lost-forest" class="thumb-item">
+      <img src="images/lost-forest-tn.png" alt="Lost Forest">
+      <span>Lost Forest</span>
+    </a>
+    <a href="#monkey-trail" class="thumb-item">
+      <img src="images/monkey-trail-tn.png" alt="Monkey Trail">
+      <span>Monkey Trail</span>
+    </a>
+    <a href="#restaurant" class="thumb-item">
+      <img src="images/restaurant-tn.png" alt="Restaurant">
+      <span>Restaurant</span>
+    </a>
+  </div>
 
-    <ul>
-        <li>Amphitheatre</li>
-        <li>Lost Forest</li>
-        <li>Monkey Trail</li>
-        <li>Restaurant</li>
-    </ul>
-</div>
+  <!-- Large Images Sections -->
+  <div id="amphitheatre" class="place-section">
+    <h2>Amphitheatre</h2>
+    <img src="images/amphitheatre.jpg" alt="Amphitheatre">
+    <p>The Amphitheatre is a beautiful outdoor venue where visitors can enjoy live performances and events surrounded by nature.</p>
+  </div>
 
-<!-- Bottom Tabs -->
-<div id="tabs-bottom">
+  <div id="lost-forest" class="place-section">
+    <h2>Lost Forest</h2>
+    <img src="images/lost-forest.jpg" alt="Lost Forest">
+    <p>The Lost Forest is a lush, shaded area filled with native plants and trees. A peaceful place to explore and discover wildlife.</p>
+  </div>
+
+  <div id="monkey-trail" class="place-section">
+    <h2>Monkey Trail</h2>
+    <img src="images/monkey-trail.jpg" alt="Monkey Trail">
+    <p>The Monkey Trail winds through the treetops and is home to a variety of playful monkeys, perfect for animal lovers and photographers.</p>
+  </div>
+
+  <div id="restaurant" class="place-section">
+    <h2>Restaurant</h2>
+    <img src="images/mos-pizza.jpg" alt="Restaurant">
+    <p>Enjoy delicious meals and refreshments at the Pine City Zoo Restaurant, offering a variety of options for all ages.</p>
+  </div>
+
+  <!-- Bottom Tabs -->
+  <div id="tabs-bottom">
     <a href="weather.html">WEATHER</a>
     <a href="feedback.html">FEEDBACK</a>
-</div>
+  </div>
 
 </body>
 </html>
