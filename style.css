@@ -1,4 +1,7 @@
 
+
+
+
 /* -------------------------------
    Global Reset
 --------------------------------*/
@@ -21,6 +24,8 @@ body, html {
     text-align: center;
     padding: 15px;
     background-color: #f3d25d; /* yellow/brown */
+    position: relative;
+    z-index: 10;
 }
 
 #header img {
@@ -35,6 +40,7 @@ body, html {
     justify-content: space-around;
     background: forestgreen;
     flex-wrap: wrap;
+    z-index: 10;
 }
 
 #tabs-top a {
@@ -85,25 +91,22 @@ body, html {
 }
 
 /* -------------------------------
-   Map Container & Animal Thumbnails
+   Animal Thumbnails Container
 --------------------------------*/
-#map-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 20px auto 100px auto; /* extra bottom for tabs */
-}
-
-/* Animal thumbnails container */
 #animal-thumbnails {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;           /* slightly bigger spacing */
     width: 90%;
-    max-width: 350px;
-    margin: 20px auto 0 auto;
+    max-width: 350px;    /* keeps them centered */
+    margin: 20px auto 150px auto;  /* extra bottom margin to prevent overlap with bottom tabs */
+    position: relative;
+    z-index: 10;
 }
 
-/* Each animal as a card with thumbnail + name */
+/* -------------------------------
+   Individual Animal Card
+--------------------------------*/
 .animal-item {
     display: flex;
     align-items: center;
@@ -112,10 +115,10 @@ body, html {
     color: black;
     font-family: 'Baloo 2', cursive;
     transition: transform 0.3s, background 0.3s;
-    padding: 10px 15px;
+    padding: 12px 15px;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
     width: 100%;
 }
 
@@ -138,138 +141,8 @@ body, html {
 }
 
 /* -------------------------------
-   Main Content Areas (other pages)
+   Responsive Adjustments
 --------------------------------*/
-#main, #content {
-    max-width: 1200px;
-    margin: 20px auto 80px auto;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
-}
-
-h1, h2, h3 {
-    font-family: 'Baloo 2', cursive;
-    color: #572800;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-p, li {
-    font-family: 'Baloo 2', cursive;
-    color: #131313;
-    line-height: 1.5;
-}
-
-/* -------------------------------
-   Info Box Styling (Places & Locations)
---------------------------------*/
-a.info-box {
-    text-decoration: none;
-    background: rgba(255, 225, 55, 0.8);
-    width: 90%;
-    display: block;
-    margin: 12px auto;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background 0.3s;
-}
-
-a.info-box:hover {
-    background: rgba(255, 225, 55, 1);
-}
-
-.info-box img {
-    height: 70px;
-    margin: 10px;
-    float: left;
-    border: 3px solid #8B5E3C;
-    border-radius: 8px;
-}
-
-.info-box h3 {
-    color: #572800;
-    text-transform: uppercase;
-    margin: 0 0 5px 0;
-}
-
-.info-box p {
-    margin: 0;
-}
-
-/* -------------------------------
-   Weather Table
---------------------------------*/
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-td {
-    padding: 5px;
-    text-align: center;
-}
-
-.info-box-weather-icon {
-    width: 40px;
-    height: 40px;
-}
-
-/* -------------------------------
-   Feedback Form Inputs
---------------------------------*/
-input[type="text"], input[type="email"], textarea {
-    width: 95%;
-    padding: 8px;
-    margin: 5px 0;
-    border: 2px solid forestgreen;
-    border-radius: 6px;
-    font-family: 'Baloo 2', cursive;
-}
-
-textarea {
-    height: 100px;
-    resize: none;
-}
-
-a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background: forestgreen;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background 0.3s;
-}
-
-a.button:hover {
-    background: darkgreen;
-}
-
-/* -------------------------------
-   Map Page Styling
---------------------------------*/
-#map-page #main #content img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-/* -------------------------------
-   Responsive
---------------------------------*/
-@media (max-width: 1024px) {
-    #animal-thumbnails {
-        max-width: 300px;
-    }
-}
-
 @media (max-width: 768px) {
     #tabs-top, #tabs-bottom {
         flex-direction: column;
@@ -277,12 +150,13 @@ a.button:hover {
 
     #animal-thumbnails {
         max-width: 90%;
+        gap: 20px;
     }
 
     .animal-item {
         flex-direction: row;
         gap: 10px;
-        padding: 8px 10px;
+        padding: 10px;
     }
 
     .animal-item img {
@@ -301,5 +175,9 @@ a.button:hover {
 
     .animal-name {
         font-size: 0.9rem;
+    }
+
+    #animal-thumbnails {
+        gap: 15px;
     }
 }
