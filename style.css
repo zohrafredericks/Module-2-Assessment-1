@@ -2,6 +2,8 @@
 
 
 
+
+
 /* -------------------------------
    Global Reset
 --------------------------------*/
@@ -38,15 +40,15 @@ body, html {
 --------------------------------*/
 #tabs-top {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center tabs horizontally */
     background: forestgreen;
+    gap: 50px; /* Space between PLACES and MAP */
     flex-wrap: wrap;
     z-index: 10;
 }
 
 #tabs-top a {
-    flex: 1;
-    padding: 12px 0;
+    padding: 12px 20px;
     text-align: center;
     color: white;
     font-weight: bold;
@@ -56,6 +58,7 @@ body, html {
 
 #tabs-top a:hover {
     background: darkgreen;
+    border-radius: 6px;
 }
 
 /* -------------------------------
@@ -95,11 +98,7 @@ body, html {
    Section Headings
 --------------------------------*/
 .section-title {
-    text-align: center;
-    color: #572800;
-    font-family: 'Baloo 2', cursive;
-    margin: 20px 0 10px 0;
-    font-size: 2rem;
+    display: none; /* Hide ANIMALS heading on index page */
 }
 
 /* -------------------------------
