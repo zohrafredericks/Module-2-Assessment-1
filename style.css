@@ -1,6 +1,9 @@
 
 
-/* Global Reset */
+
+ /* -------------------------------
+   Global Reset
+--------------------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -13,22 +16,27 @@ body, html {
     background-size: cover;
 }
 
-/* Header */
+/* -------------------------------
+   Header
+--------------------------------*/
 #header {
     text-align: center;
-    padding: 10px;
-    background-color: #f3d25d; /* yellow/brown background */
+    padding: 15px;
+    background-color: #f3d25d; /* yellow/brown */
 }
 
 #header img {
     max-height: 80px;
 }
 
-/* Top Tabs */
+/* -------------------------------
+   Top Tabs
+--------------------------------*/
 #tabs-top {
     display: flex;
     justify-content: space-around;
     background: forestgreen;
+    flex-wrap: wrap;
 }
 
 #tabs-top a {
@@ -45,7 +53,9 @@ body, html {
     background: darkgreen;
 }
 
-/* Bottom Tabs */
+/* -------------------------------
+   Bottom Tabs
+--------------------------------*/
 #tabs-bottom {
     display: flex;
     justify-content: space-around;
@@ -54,6 +64,7 @@ body, html {
     bottom: 0;
     width: 100%;
     z-index: 100;
+    flex-wrap: wrap;
 }
 
 #tabs-bottom a {
@@ -75,20 +86,21 @@ body, html {
     background: darkgreen;
 }
 
-/* Map Container */
+/* -------------------------------
+   Map Container & Animal Thumbnails
+--------------------------------*/
 #map-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px 10px 70px; /* bottom padding to avoid bottom tabs */
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto 100px auto; /* extra bottom for tabs */
 }
 
-/* Animal Thumbnails Grid */
 #animal-thumbnails {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 15px;
     width: 90%;
-    max-width: 1200px;
+    margin: 20px auto 0 auto;
 }
 
 #animal-thumbnails a img {
@@ -104,7 +116,9 @@ body, html {
     transform: scale(1.05);
 }
 
-/* Main Content Areas for other pages */
+/* -------------------------------
+   Main Content Areas (other pages)
+--------------------------------*/
 #main, #content {
     max-width: 1200px;
     margin: 20px auto 80px auto;
@@ -126,7 +140,9 @@ p, li {
     line-height: 1.5;
 }
 
-/* Info Box Styling (Places & Locations) */
+/* -------------------------------
+   Info Box Styling (Places & Locations)
+--------------------------------*/
 a.info-box {
     text-decoration: none;
     background: rgba(255, 225, 55, 0.8);
@@ -160,7 +176,9 @@ a.info-box:hover {
     margin: 0;
 }
 
-/* Weather Table */
+/* -------------------------------
+   Weather Table
+--------------------------------*/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -177,7 +195,9 @@ td {
     height: 40px;
 }
 
-/* Feedback Form Inputs */
+/* -------------------------------
+   Feedback Form Inputs
+--------------------------------*/
 input[type="text"], input[type="email"], textarea {
     width: 95%;
     padding: 8px;
@@ -208,13 +228,28 @@ a.button:hover {
     background: darkgreen;
 }
 
-/* Responsive */
+/* -------------------------------
+   Responsive
+--------------------------------*/
+@media (max-width: 1024px) {
+    #animal-thumbnails {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     #tabs-top, #tabs-bottom {
         flex-direction: column;
     }
 
     #animal-thumbnails {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    #animal-thumbnails {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 10px;
     }
 }
