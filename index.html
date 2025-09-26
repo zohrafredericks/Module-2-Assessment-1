@@ -1,100 +1,121 @@
 
 
 
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pine City Zoo - Home</title>
-  
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Master CSS -->
-  <link rel="stylesheet" href="style.css">
-  
-  <style>
-    body { font-family: 'Baloo 2', cursive; margin:0; padding:0; background:#f5f5f5; }
-    #header { text-align:center; padding:15px; background-color: rgba(243,210,93,0.9); }
-    #header img { max-height:80px; }
-    #tabs-top, #tabs-bottom { display:flex; justify-content:space-around; background:forestgreen; flex-wrap:wrap; }
-    #tabs-top a, #tabs-bottom a, .tab-heading { flex:1; padding:12px 0; text-align:center; color:white; font-weight:bold; text-decoration:none; transition:background 0.3s; }
-    #tabs-top a:hover, #tabs-bottom a:hover { background: darkgreen; }
-    #tabs-bottom { position:fixed; bottom:0; width:100%; z-index:3; }
-    #main { max-width:1200px; margin:100px auto 140px auto; padding:20px; }
-    #animal-thumbnails { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-    .animal-item { display:flex; flex-direction:column; align-items:center; width:150px; text-decoration:none; }
-    .animal-item img { width:150px; height:150px; object-fit:cover; border-radius:10px; border:3px solid forestgreen; }
-    .animal-name { margin-top:10px; font-size:1.1rem; color:#572800; text-align:center; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pine City Zoo - Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body { font-family: 'Baloo 2', cursive; margin:0; padding:0; background:#f5f5f5; }
+#header { text-align:center; padding:15px; background-color: rgba(243,210,93,0.9); }
+#header img { max-height:80px; }
+#tabs-top, #tabs-bottom { display:flex; justify-content:space-around; background:forestgreen; flex-wrap:wrap; }
+#tabs-top a, #tabs-bottom a, .tab-heading { flex:1; padding:12px 0; text-align:center; color:white; font-weight:bold; text-decoration:none; transition:background 0.3s; }
+#tabs-top a:hover, #tabs-bottom a:hover { background: darkgreen; }
+#tabs-bottom { position:fixed; bottom:0; width:100%; z-index:3; }
+#main { max-width:1200px; margin:100px auto 140px auto; padding:20px; }
+#animal-thumbnails, #place-thumbnails { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-bottom:40px; }
+.animal-item, .place-item { display:flex; flex-direction:column; align-items:center; width:150px; text-decoration:none; }
+.animal-item img, .place-item img { width:150px; height:150px; object-fit:cover; border-radius:10px; border:3px solid forestgreen; transition: transform 0.3s; }
+.animal-item img:hover, .place-item img:hover { transform: scale(1.05); }
+.animal-name, .place-name { margin-top:10px; font-size:1.1rem; color:#572800; text-align:center; }
+.section-title { text-align:center; font-size:1.5rem; color:#572800; margin-bottom:20px; font-weight:bold; }
+</style>
 </head>
 <body id="home-page">
 
-  <!-- Header -->
-  <div id="header">
-    <img src="images/logo.png" alt="Pine City Zoo Logo">
+<!-- Header -->
+<div id="header">
+  <img src="images/logo.png" alt="Pine City Zoo Logo">
+</div>
+
+<!-- Top Tabs -->
+<div id="tabs-top">
+  <a href="places.html">PLACES</a>
+  <span class="tab-heading">ANIMALS</span>
+  <a href="map.html">MAP</a>
+</div>
+
+<!-- Main Content -->
+<div id="main">
+
+  <!-- Animal Thumbnails -->
+  <div class="section-title">Animals</div>
+  <div id="animal-thumbnails">
+    <a href="gorilla.html" class="animal-item">
+      <img src="images/gorilla-tn.png" alt="Gorilla">
+      <span class="animal-name">Gorilla</span>
+    </a>
+    <a href="koala.html" class="animal-item">
+      <img src="images/koala-tn.png" alt="Koala">
+      <span class="animal-name">Koala</span>
+    </a>
+    <a href="lion.html" class="animal-item">
+      <img src="images/lion-tn.png" alt="Lion">
+      <span class="animal-name">Lion</span>
+    </a>
+    <a href="monkey.html" class="animal-item">
+      <img src="images/monkey-tn.png" alt="Monkey">
+      <span class="animal-name">Monkey</span>
+    </a>
+    <a href="panda.html" class="animal-item">
+      <img src="images/panda-tn.png" alt="Panda">
+      <span class="animal-name">Panda</span>
+    </a>
+    <a href="tiger.html" class="animal-item">
+      <img src="images/tiger-tn.png" alt="Tiger">
+      <span class="animal-name">Tiger</span>
+    </a>
+    <a href="warthog.html" class="animal-item">
+      <img src="images/warthog-tn.png" alt="Warthog">
+      <span class="animal-name">Warthog</span>
+    </a>
+    <a href="elephant.html" class="animal-item">
+      <img src="images/elephant-tn.png" alt="Elephant">
+      <span class="animal-name">Elephant</span>
+    </a>
+    <a href="giraffe.html" class="animal-item">
+      <img src="images/giraffe-tn.png" alt="Giraffe">
+      <span class="animal-name">Giraffe</span>
+    </a>
+    <a href="gemsbok.html" class="animal-item">
+      <img src="images/gemsbok-tn.png" alt="Gemsbok">
+      <span class="animal-name">Gemsbok</span>
+    </a>
   </div>
 
-  <!-- Top Tabs -->
-  <div id="tabs-top">
-    <a href="places.html">PLACES</a>
-    <span class="tab-heading">ANIMALS</span>
-    <a href="map.html">MAP</a>
+  <!-- Place Thumbnails -->
+  <div class="section-title">Places</div>
+  <div id="place-thumbnails">
+    <a href="locations.html#amphitheatre" class="place-item">
+      <img src="images/amphitheatre-tn.png" alt="Amphitheatre">
+      <span class="place-name">Amphitheatre</span>
+    </a>
+    <a href="locations.html#lost-forest" class="place-item">
+      <img src="images/lost-forest-tn.png" alt="Lost Forest">
+      <span class="place-name">Lost Forest</span>
+    </a>
+    <a href="locations.html#monkey-trail" class="place-item">
+      <img src="images/monkey-trail-tn.png" alt="Monkey Trail">
+      <span class="place-name">Monkey Trail</span>
+    </a>
+    <a href="locations.html#restaurant" class="place-item">
+      <img src="images/restaurant-tn.png" alt="Restaurant">
+      <span class="place-name">Restaurant</span>
+    </a>
   </div>
 
-  <!-- Main Content -->
-  <div id="main">
-    <div id="animal-thumbnails">
-      <a href="gorilla.html" class="animal-item">
-        <img src="images/gorilla-tn.png" alt="Gorilla">
-        <span class="animal-name">Gorilla</span>
-      </a>
-      <a href="koala.html" class="animal-item">
-        <img src="images/koala-tn.png" alt="Koala">
-        <span class="animal-name">Koala</span>
-      </a>
-      <a href="lion.html" class="animal-item">
-        <img src="images/lion-tn.png" alt="Lion">
-        <span class="animal-name">Lion</span>
-      </a>
-      <a href="monkey.html" class="animal-item">
-        <img src="images/monkey-tn.png" alt="Monkey">
-        <span class="animal-name">Monkey</span>
-      </a>
-      <a href="panda.html" class="animal-item">
-        <img src="images/panda-tn.png" alt="Panda">
-        <span class="animal-name">Panda</span>
-      </a>
-      <a href="tiger.html" class="animal-item">
-        <img src="images/tiger-tn.png" alt="Tiger">
-        <span class="animal-name">Tiger</span>
-      </a>
-      <a href="warthog.html" class="animal-item">
-        <img src="images/warthog-tn.png" alt="Warthog">
-        <span class="animal-name">Warthog</span>
-      </a>
-      <a href="elephant.html" class="animal-item">
-        <img src="images/elephant-tn.png" alt="Elephant">
-        <span class="animal-name">Elephant</span>
-      </a>
-      <a href="giraffe.html" class="animal-item">
-        <img src="images/giraffe-tn.png" alt="Giraffe">
-        <span class="animal-name">Giraffe</span>
-      </a>
-      <a href="gemsbok.html" class="animal-item">
-        <img src="images/gemsbok-tn.png" alt="Gemsbok">
-        <span class="animal-name">Gemsbok</span>
-      </a>
-    </div>
-  </div>
+</div>
 
-  <!-- Bottom Tabs -->
-  <div id="tabs-bottom">
-    <a href="weather.html">WEATHER</a>
-    <a href="feedback.html">FEEDBACK</a>
-  </div>
+<!-- Bottom Tabs -->
+<div id="tabs-bottom">
+  <a href="weather.html">WEATHER</a>
+  <a href="feedback.html">FEEDBACK</a>
+</div>
 
 </body>
 </html>
