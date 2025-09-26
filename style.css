@@ -1,90 +1,111 @@
 
 
-/* Header */
+/* Import fun bold font */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
+
+/* General Page Setup */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('images/default-bg.png') no-repeat center center fixed; /* default fun background */
+  background-size: cover;
+  color: #333;
+}
+
+/* Fun headings */
+h1, h2 {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+  color: #2e4600;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+/* Header (Logo Area) */
 #header {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #f8f8f8;
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(to right, #d2b48c, #c19a6b);
+  border-bottom: 3px solid #8b5a2b;
 }
 
 #header img {
-    width: 150px;
-    height: auto;
+  height: 80px;
+}
+
+/* Main Section */
+#main-home {
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* Top Navigation Tabs */
 #tabs-top {
-    text-align: center;
-    background-color: #333;
-    padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 #tabs-top a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    transition: color 0.3s;
+  flex: 1;
+  max-width: 150px;
+  margin: 5px;
+  padding: 12px;
+  background: forestgreen;
+  color: white;
+  text-decoration: none;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  transition: transform 0.2s, background 0.3s;
 }
 
 #tabs-top a:hover {
-    color: #ff9900;
+  background: darkgreen;
+  transform: scale(1.08);
 }
 
-/* Main Home Section */
-#main-home {
-    text-align: center;
-    padding: 30px 20px;
-    font-family: Arial, sans-serif;
+/* Bottom Tabs */
+#tabs-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background: forestgreen;
 }
 
-#main-home h1 {
-    color: #333;
-    font-size: 2em;
-    margin-bottom: 10px;
+#tabs-bottom a {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-right: 1px solid #fff;
+  transition: transform 0.2s, background 0.3s;
 }
 
-/* Small Panda */
-#main-home img[alt="Small Panda"] {
-    width: 100px;
-    height: auto;
-    margin: 15px 0;
+#tabs-bottom a:last-child {
+  border-right: none;
 }
 
-/* Paragraph */
-#main-home p {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 30px;
+#tabs-bottom a:hover {
+  background: darkgreen;
+  transform: scale(1.08);
 }
 
-/* Grid Container */
-#grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.grid-item {
-    width: 200px;
-    text-align: center;
-}
-
-.grid-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.grid-item img:hover {
-    transform: scale(1.05);
-}
-
-.grid-item p {
-    margin-top: 8px;
-    font-weight: bold;
-    color: #333;
-}
+/* Fun page backgrounds for different sections */
+body.animals { background: url('images/animals-bg.png') no-repeat center center fixed; background-size: cover; }
+body.places { background: url('images/places-bg.png') no-repeat center center fixed; background-size: cover; }
+body.weather { background: url('images/weather-bg.png') no-repeat center center fixed; background-size: cover; }
+body.feedback { background: url('images/feedback-bg.png') no-repeat center center fixed; background-size: cover; }
+body.restaurant { background: url('images/restaurant-bg.png') no-repeat center center fixed; background-size: cover; }
+body.map { background: url('images/map-bg.png') no-repeat center center fixed; background-size: cover; }
