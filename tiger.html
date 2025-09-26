@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,19 @@
 <title>Tiger - Pine City Zoo</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style> /* same styles */ </style>
+<style>
+body { font-family: 'Baloo 2', cursive; background: url('images/map-blur.png') no-repeat center center fixed; background-size: cover; margin:0; padding:0; }
+#header { text-align:center; padding:15px; background-color: rgba(243,210,93,0.9); }
+#header img { max-height:80px; }
+#tabs-top, #tabs-bottom { display:flex; justify-content:space-around; background:forestgreen; flex-wrap:wrap; z-index:3; }
+#tabs-top a, #tabs-bottom a { flex:1; padding:12px 0; text-align:center; color:white; font-weight:bold; text-decoration:none; transition:background 0.3s; }
+#tabs-top a:hover, #tabs-bottom a:hover { background: darkgreen; }
+#tabs-bottom { position:fixed; bottom:0; width:100%; z-index:3; }
+#main-content { max-width:900px; margin:120px auto 120px auto; padding:20px; background: rgba(255,255,255,0.9); border-radius:10px; text-align:center; }
+#main-content img { max-width:100%; height:auto; border-radius:10px; border:3px solid forestgreen; margin-bottom:20px; }
+h1 { color:#572800; margin-bottom:15px; }
+p { line-height:1.5; color:#131313; }
+</style>
 </head>
 <body>
 <div id="header">
@@ -22,7 +35,7 @@
   <h1>Tiger</h1>
   <img src="images/tiger.png" alt="Tiger">
   <p>
-    Tigers are large carnivorous cats with distinctive orange coats and black stripes. They are solitary hunters found in Asia’s forests and grasslands.
+    Tigers are the largest cat species in the world, native to Asia. They are carnivorous predators with distinctive orange coats and black stripes.
   </p>
 </div>
 <div id="tabs-bottom">
