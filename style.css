@@ -1,38 +1,114 @@
 
-#map-container {
-  position: relative;
-  display: inline-block;
-  margin: 20px auto;
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Baloo 2', cursive;
+  background-color: #fff;
+  text-align: center;
 }
 
-#zoo-map {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  display: block;
-  border: 3px solid #8b5a2b;
+/* Header */
+#header {
+  text-align: center;
+  padding: 10px;
+  background-color: #f2c94c; /* yellow/brown background */
+  border: 2px solid #8b5a2b;
   border-radius: 12px;
+  width: 90%;
+  margin: 15px auto;
 }
 
-/* Animal Thumbnails */
-.animal-marker {
-  position: absolute;
-  display: block;
-  width: 60px;  /* thumbnail size */
+#header img {
   height: 60px;
-  transition: transform 0.2s;
 }
 
-.animal-marker img {
+/* Headings */
+h1 {
+  font-size: 1.6rem;
+  color: #2e4600;
+  margin: 10px 0 5px 0;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: #f2a12d;
+  margin: 5px 0;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: #ff6f61;
+  margin: 5px 0 15px 0;
+  font-weight: 600;
+}
+
+/* Map */
+#zoo-map {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  border: 2px solid #8b5a2b;
+  border-radius: 12px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Animal thumbnails grid */
+#animal-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 10px;
+  width: 90%;
+  max-width: 600px;
+  margin: 15px auto;
+}
+
+#animal-thumbnails a img {
   width: 100%;
-  height: 100%;
-  border: 3px solid #ffcc00; /* bright yellow border */
-  border-radius: 50%; /* fully rounded */
-  transition: transform 0.2s, border-color 0.3s;
+  border-radius: 50%;
+  border: 2px solid #ffcc00;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.animal-marker:hover img {
-  transform: scale(1.2);
-  border-color: #ff9900; /* darker yellow on hover */
+#animal-thumbnails a:hover img {
+  transform: scale(1.2) translateY(-5px); /* bounce/scale effect */
+  border-color: #ff9900;
   cursor: pointer;
+}
+
+/* Top and bottom navigation tabs */
+#tabs-top, #tabs-bottom {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+#tabs-top a, #tabs-bottom a {
+  flex: 1;
+  max-width: 140px;
+  margin: 3px;
+  padding: 8px;
+  background: forestgreen;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: 'Baloo 2', cursive;
+}
+
+#tabs-top a:hover, #tabs-bottom a:hover {
+  background: darkgreen;
+}
+
+/* Bottom tabs fixed */
+#tabs-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
