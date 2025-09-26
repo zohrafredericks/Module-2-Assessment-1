@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +10,8 @@
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="style.css">
 <style>
-/* Full page map background */
 html, body {
     height: 100%;
     margin: 0;
@@ -24,8 +25,6 @@ html, body {
     text-align: center;
     padding: 15px;
     background-color: rgba(243, 210, 93, 0.9);
-    position: relative;
-    z-index: 3;
 }
 
 #header img {
@@ -38,7 +37,6 @@ html, body {
     justify-content: space-around;
     background: forestgreen;
     flex-wrap: wrap;
-    position: relative;
     z-index: 3;
 }
 
@@ -63,62 +61,85 @@ html, body {
     z-index: 3;
 }
 
-/* Animal thumbnails container */
-#animal-thumbnails-wrapper {
-    display: flex;
-    justify-content: center; /* horizontal centering */
-    align-items: center;     /* vertical centering */
-    flex-direction: column;
-    height: calc(100% - 80px - 50px - 50px); /* height minus header + top tabs + bottom tabs */
-    padding: 20px;
-    overflow-y: auto;
-    box-sizing: border-box;
+/* Section Heading */
+.section-title {
+    text-align: center;
+    color: #572800;
+    font-family: 'Baloo 2', cursive;
+    margin: 20px 0 10px 0;
+    font-size: 2rem;
 }
 
+/* Animal Thumbnails Grid */
 #animal-thumbnails {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 20px;
-    width: 100%;
-    max-width: 300px; /* container width */
-    align-items: flex-start; /* name appears to the right */
+    justify-items: center;
+    margin: 0 auto 120px auto;
+    padding: 20px;
+    max-width: 1000px;
+    position: relative;
+    z-index: 10;
 }
 
-/* Each thumbnail + name horizontally aligned */
+/* Individual Animal Item */
 .animal-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
     text-decoration: none;
-    color: black;
+    color: inherit;
     font-family: 'Baloo 2', cursive;
-    transition: transform 0.3s;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    z-index: 10;
 }
 
 .animal-item img {
-    width: 80px;
+    width: 120px;
     height: auto;
-    border: 3px solid forestgreen;
     border-radius: 8px;
+    border: 3px solid forestgreen;
 }
 
 .animal-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 .animal-name {
-    font-size: 1.2rem;
+    margin-top: 8px;
+    font-size: 1.1rem;
     font-weight: 700;
+    text-align: center;
 }
 
-/* Optional scrollbar styling */
-#animal-thumbnails-wrapper::-webkit-scrollbar {
-    width: 8px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #animal-thumbnails {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 15px;
+    }
+    .animal-item img {
+        width: 100px;
+    }
+    .animal-name {
+        font-size: 1rem;
+    }
 }
 
-#animal-thumbnails-wrapper::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 4px;
+@media (max-width: 480px) {
+    #animal-thumbnails {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px;
+    }
+    .animal-item img {
+        width: 80px;
+    }
+    .animal-name {
+        font-size: 0.95rem;
+    }
 }
 </style>
 </head>
@@ -131,55 +152,53 @@ html, body {
 
 <!-- Top Tabs -->
 <div id="tabs-top">
-    <a href="animals.html">ANIMALS</a>
     <a href="places.html">PLACES</a>
     <a href="map.html">MAP</a>
 </div>
 
-<!-- Animal Thumbnails Section -->
-<div id="animal-thumbnails-wrapper">
-    <div id="animal-thumbnails">
-        <a href="animal-gorilla.html" class="animal-item">
-            <img src="images/gorilla-tn.png" alt="Gorilla" title="Gorilla">
-            <span class="animal-name">Gorilla</span>
-        </a>
-        <a href="animal-koala.html" class="animal-item">
-            <img src="images/koala-tn.png" alt="Koala" title="Koala">
-            <span class="animal-name">Koala</span>
-        </a>
-        <a href="animal-lion.html" class="animal-item">
-            <img src="images/lion-tn.png" alt="Lion" title="Lion">
-            <span class="animal-name">Lion</span>
-        </a>
-        <a href="animal-monkey.html" class="animal-item">
-            <img src="images/monkey-tn.png" alt="Monkey" title="Monkey">
-            <span class="animal-name">Monkey</span>
-        </a>
-        <a href="animal-panda.html" class="animal-item">
-            <img src="images/panda-tn.png" alt="Panda" title="Panda">
-            <span class="animal-name">Panda</span>
-        </a>
-        <a href="animal-tiger.html" class="animal-item">
-            <img src="images/tiger-tn.png" alt="Tiger" title="Tiger">
-            <span class="animal-name">Tiger</span>
-        </a>
-        <a href="animal-warthog.html" class="animal-item">
-            <img src="images/warthog-tn.png" alt="Warthog" title="Warthog">
-            <span class="animal-name">Warthog</span>
-        </a>
-        <a href="animal-elephant.html" class="animal-item">
-            <img src="images/elephant-tn.png" alt="Elephant" title="Elephant">
-            <span class="animal-name">Elephant</span>
-        </a>
-        <a href="animal-giraffe.html" class="animal-item">
-            <img src="images/giraffe-tn.png" alt="Giraffe" title="Giraffe">
-            <span class="animal-name">Giraffe</span>
-        </a>
-        <a href="animal-gemsbok.html" class="animal-item">
-            <img src="images/gemsbok-tn.png" alt="Gemsbok" title="Gemsbok">
-            <span class="animal-name">Gemsbok</span>
-        </a>
-    </div>
+<!-- Animal Section -->
+<h2 class="section-title">ANIMALS</h2>
+<div id="animal-thumbnails">
+    <a href="animal-gorilla.html" class="animal-item">
+        <img src="images/gorilla-tn.png" alt="Gorilla">
+        <span class="animal-name">Gorilla</span>
+    </a>
+    <a href="animal-koala.html" class="animal-item">
+        <img src="images/koala-tn.png" alt="Koala">
+        <span class="animal-name">Koala</span>
+    </a>
+    <a href="animal-lion.html" class="animal-item">
+        <img src="images/lion-tn.png" alt="Lion">
+        <span class="animal-name">Lion</span>
+    </a>
+    <a href="animal-monkey.html" class="animal-item">
+        <img src="images/monkey-tn.png" alt="Monkey">
+        <span class="animal-name">Monkey</span>
+    </a>
+    <a href="animal-panda.html" class="animal-item">
+        <img src="images/panda-tn.png" alt="Panda">
+        <span class="animal-name">Panda</span>
+    </a>
+    <a href="animal-tiger.html" class="animal-item">
+        <img src="images/tiger-tn.png" alt="Tiger">
+        <span class="animal-name">Tiger</span>
+    </a>
+    <a href="animal-warthog.html" class="animal-item">
+        <img src="images/warthog-tn.png" alt="Warthog">
+        <span class="animal-name">Warthog</span>
+    </a>
+    <a href="animal-elephant.html" class="animal-item">
+        <img src="images/elephant-tn.png" alt="Elephant">
+        <span class="animal-name">Elephant</span>
+    </a>
+    <a href="animal-giraffe.html" class="animal-item">
+        <img src="images/giraffe-tn.png" alt="Giraffe">
+        <span class="animal-name">Giraffe</span>
+    </a>
+    <a href="animal-gemsbok.html" class="animal-item">
+        <img src="images/gemsbok-tn.png" alt="Gemsbok">
+        <span class="animal-name">Gemsbok</span>
+    </a>
 </div>
 
 <!-- Bottom Tabs -->
