@@ -1,123 +1,134 @@
 
 
-/* General body styles */
+
+/* ---------------------------------------
+   General Styles
+---------------------------------------- */
 body {
     margin: 0;
     padding: 0;
-    font-family: Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
 }
 
-/* Header */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------------------------------------
+   Header
+---------------------------------------- */
 #header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-color: darkgreen;
-    z-index: 500;
     text-align: center;
-    color: orange;
+    padding: 20px 0;
+    background-color: #f8f8f8;
 }
 
-#header h1 {
-    line-height: 80px;
-    margin: 0;
-    font-size: 28px;
+#header img {
+    width: 150px;
 }
 
-/* Top Tabs */
+/* ---------------------------------------
+   Top Navigation Tabs
+---------------------------------------- */
 #tabs-top {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background-color: forestgreen;
-    z-index: 500;
+    text-align: center;
+    background-color: #333;
+    padding: 10px 0;
 }
 
 #tabs-top a {
-    float: left;
-    display: block;
-    width: 33%;
-    height: 100%;
     color: white;
-    font-weight: 700;
     text-decoration: none;
-    text-align: center;
-    line-height: 40px;
+    margin: 0 15px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: color 0.3s;
 }
 
-/* Main Home */
+#tabs-top a:hover,
+#tabs-top a.active {
+    color: #ff9900;
+}
+
+/* ---------------------------------------
+   Main Home Section
+---------------------------------------- */
 #main-home {
-    margin-top: 120px;
-    background: url('images/map-blur.png') no-repeat center center fixed;
-    background-size: cover;
-    padding-bottom: 50px;
+    text-align: center;
+    padding: 30px 20px;
 }
 
-#content {
-    padding: 10px;
+#main-home h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
-/* Animal Thumbnails */
-a.info-box {
-    display: block;
-    width: 90%;
-    margin: 12px auto;
-    background: rgba(255, 225, 55, 0.8);
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 12px;
-    transition: transform 0.2s;
+#main-home img[alt="Small Panda"] {
+    width: 100px;
+    margin: 15px 0;
 }
 
-a.info-box:hover {
+#main-home p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* ---------------------------------------
+   Animal Grid
+---------------------------------------- */
+#grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grid-item {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+.grid-item img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.grid-item img:hover {
     transform: scale(1.05);
 }
 
-/* Thumbnail Images */
-.info-box img {
-    float: left;
-    height: 70px;
-    margin-right: 10px;
-    border: 3px solid darkgreen;
-    border-radius: 8px;
+.grid-item p {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #333;
 }
 
-.info-box h3 {
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    color: #572800;
-}
+/* ---------------------------------------
+   Responsive Design
+---------------------------------------- */
+@media screen and (max-width: 600px) {
+    #tabs-top a {
+        display: block;
+        margin: 10px 0;
+    }
 
-.info-box p {
-    margin: 0;
-    padding: 0;
-    color: #131313;
-}
+    #main-home {
+        padding: 20px 10px;
+    }
 
-/* Bottom Tabs */
-#tabs-bottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background-color: forestgreen;
-    z-index: 500;
-}
+    #grid-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-#tabs-bottom a {
-    float: left;
-    width: 50%;
-    height: 100%;
-    display: block;
-    color: white;
-    font-weight: 700;
-    text-align: center;
-    line-height: 40px;
-    text-decoration: none;
+    .grid-item {
+        max-width: 90%;
+    }
 }
