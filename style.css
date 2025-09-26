@@ -1,26 +1,6 @@
 
 
-
-/* ---------------------------------------
-   General Styles
----------------------------------------- */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #333;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ---------------------------------------
-   Header
----------------------------------------- */
+/* Header */
 #header {
     text-align: center;
     padding: 20px 0;
@@ -29,11 +9,10 @@ img {
 
 #header img {
     width: 150px;
+    height: auto;
 }
 
-/* ---------------------------------------
-   Top Navigation Tabs
----------------------------------------- */
+/* Top Navigation Tabs */
 #tabs-top {
     text-align: center;
     background-color: #333;
@@ -49,17 +28,15 @@ img {
     transition: color 0.3s;
 }
 
-#tabs-top a:hover,
-#tabs-top a.active {
+#tabs-top a:hover {
     color: #ff9900;
 }
 
-/* ---------------------------------------
-   Main Home Section
----------------------------------------- */
+/* Main Home Section */
 #main-home {
     text-align: center;
     padding: 30px 20px;
+    font-family: Arial, sans-serif;
 }
 
 #main-home h1 {
@@ -68,20 +45,21 @@ img {
     margin-bottom: 10px;
 }
 
+/* Small Panda */
 #main-home img[alt="Small Panda"] {
     width: 100px;
+    height: auto;
     margin: 15px 0;
 }
 
+/* Paragraph */
 #main-home p {
     font-size: 1.1em;
     color: #555;
     margin-bottom: 30px;
 }
 
-/* ---------------------------------------
-   Animal Grid
----------------------------------------- */
+/* Grid Container */
 #grid-container {
     display: flex;
     flex-wrap: wrap;
@@ -90,14 +68,15 @@ img {
 }
 
 .grid-item {
-    width: 100%;
-    max-width: 200px;
+    width: 200px;
     text-align: center;
 }
 
 .grid-item img {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .grid-item img:hover {
@@ -108,27 +87,4 @@ img {
     margin-top: 8px;
     font-weight: bold;
     color: #333;
-}
-
-/* ---------------------------------------
-   Responsive Design
----------------------------------------- */
-@media screen and (max-width: 600px) {
-    #tabs-top a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    #main-home {
-        padding: 20px 10px;
-    }
-
-    #grid-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .grid-item {
-        max-width: 90%;
-    }
 }
