@@ -1,12 +1,7 @@
 
 
 
-
-
-
-/* -------------------------------
-   Global Reset
---------------------------------*/
+/* ------------------------------- Global Reset --------------------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -20,9 +15,7 @@ body, html {
     height: 100%;
 }
 
-/* -------------------------------
-   Header
---------------------------------*/
+/* ------------------------------- Header --------------------------------*/
 #header {
     text-align: center;
     padding: 15px;
@@ -35,35 +28,35 @@ body, html {
     max-height: 80px;
 }
 
-/* -------------------------------
-   Top Tabs
---------------------------------*/
+/* ------------------------------- Top Tabs (including non-clickable ANIMALS) --------------------------------*/
 #tabs-top {
     display: flex;
-    justify-content: center; /* Center tabs horizontally */
+    justify-content: center;  /* Center tabs as a group */
     background: forestgreen;
-    gap: 50px; /* Space between PLACES and MAP */
+    gap: 20px;                /* Space between tabs */
     flex-wrap: wrap;
     z-index: 10;
 }
 
-#tabs-top a {
-    padding: 12px 20px;
+/* All tabs, including non-clickable */
+#tabs-top a,
+#tabs-top .tab-heading {
+    flex: 1;                  /* Equal width for each tab */
+    padding: 12px 0;
     text-align: center;
-    color: white;
     font-weight: bold;
+    color: white;
+    font-family: 'Baloo 2', cursive;
     text-decoration: none;
-    transition: background 0.3s;
 }
 
+/* Hover effect for clickable links only */
 #tabs-top a:hover {
     background: darkgreen;
     border-radius: 6px;
 }
 
-/* -------------------------------
-   Bottom Tabs
---------------------------------*/
+/* ------------------------------- Bottom Tabs --------------------------------*/
 #tabs-bottom {
     display: flex;
     justify-content: space-around;
@@ -94,16 +87,12 @@ body, html {
     background: darkgreen;
 }
 
-/* -------------------------------
-   Section Headings
---------------------------------*/
+/* ------------------------------- Section Headings --------------------------------*/
 .section-title {
     display: none; /* Hide ANIMALS heading on index page */
 }
 
-/* -------------------------------
-   Animal Thumbnails Grid
---------------------------------*/
+/* ------------------------------- Animal Thumbnails Grid --------------------------------*/
 #animal-thumbnails {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -116,7 +105,6 @@ body, html {
     z-index: 10;
 }
 
-/* Individual Animal Item */
 .animal-item {
     display: flex;
     flex-direction: column;
@@ -139,6 +127,7 @@ body, html {
 .animal-item:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    cursor: pointer;
 }
 
 .animal-name {
@@ -148,9 +137,7 @@ body, html {
     text-align: center;
 }
 
-/* -------------------------------
-   Main Content (for places, map, weather, feedback)
---------------------------------*/
+/* ------------------------------- Main Content (for places, map, weather, feedback) --------------------------------*/
 #main, #content {
     max-width: 1200px;
     margin: 20px auto 100px auto;
@@ -173,9 +160,7 @@ p, li {
     line-height: 1.5;
 }
 
-/* -------------------------------
-   Info Box Styling (Places & Locations)
---------------------------------*/
+/* ------------------------------- Info Box Styling (Places & Locations) --------------------------------*/
 a.info-box {
     text-decoration: none;
     background: rgba(255, 225, 55, 0.8);
@@ -209,9 +194,7 @@ a.info-box:hover {
     margin: 0;
 }
 
-/* -------------------------------
-   Weather Table
---------------------------------*/
+/* ------------------------------- Weather Table --------------------------------*/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -228,9 +211,7 @@ td {
     height: 40px;
 }
 
-/* -------------------------------
-   Feedback Form Inputs
---------------------------------*/
+/* ------------------------------- Feedback Form Inputs --------------------------------*/
 input[type="text"], input[type="email"], textarea {
     width: 95%;
     padding: 8px;
@@ -261,24 +242,25 @@ a.button:hover {
     background: darkgreen;
 }
 
-/* -------------------------------
-   Map Page Images
---------------------------------*/
+/* ------------------------------- Map Page Images --------------------------------*/
 #map-page #main #content img {
     display: block;
     margin: 20px auto;
     max-width: 100%;
     height: auto;
-    border-radius: 10px; 
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* -------------------------------
-   Responsive
---------------------------------*/
+/* ------------------------------- Responsive --------------------------------*/
 @media (max-width: 768px) {
     #tabs-top, #tabs-bottom {
         flex-direction: column;
+    }
+
+    #tabs-top a,
+    #tabs-top .tab-heading {
+        flex: unset; /* allow full-width stacking */
     }
 
     #animal-thumbnails {
