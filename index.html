@@ -1,7 +1,8 @@
 
 
 
-  <!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -13,6 +14,21 @@
   
   <!-- Master CSS -->
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body { font-family: 'Baloo 2', cursive; margin:0; padding:0; background:#f5f5f5; }
+    #header { text-align:center; padding:15px; background-color: rgba(243,210,93,0.9); }
+    #header img { max-height:80px; }
+    #tabs-top, #tabs-bottom { display:flex; justify-content:space-around; background:forestgreen; flex-wrap:wrap; }
+    #tabs-top a, #tabs-bottom a, .tab-heading { flex:1; padding:12px 0; text-align:center; color:white; font-weight:bold; text-decoration:none; transition:background 0.3s; }
+    #tabs-top a:hover, #tabs-bottom a:hover { background: darkgreen; }
+    #tabs-bottom { position:fixed; bottom:0; width:100%; z-index:3; }
+    #main { max-width:1200px; margin:100px auto 140px auto; padding:20px; }
+    #animal-thumbnails { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .animal-item { display:flex; flex-direction:column; align-items:center; width:150px; text-decoration:none; }
+    .animal-item img { width:150px; height:150px; object-fit:cover; border-radius:10px; border:3px solid forestgreen; }
+    .animal-name { margin-top:10px; font-size:1.1rem; color:#572800; text-align:center; }
+  </style>
 </head>
 <body id="home-page">
 
@@ -21,7 +37,7 @@
     <img src="images/logo.png" alt="Pine City Zoo Logo">
   </div>
 
-  <!-- Top Tabs: PLACES | ANIMALS | MAP -->
+  <!-- Top Tabs -->
   <div id="tabs-top">
     <a href="places.html">PLACES</a>
     <span class="tab-heading">ANIMALS</span>
@@ -30,52 +46,47 @@
 
   <!-- Main Content -->
   <div id="main">
-    <div id="content">
-
-      <!-- Animal Thumbnails Section -->
-      <div id="animal-thumbnails">
-        <a href="gorilla.html" class="animal-item">
-          <img src="images/gorilla-tn.png" alt="Gorilla">
-          <span class="animal-name">Gorilla</span>
-        </a>
-        <a href="koala.html" class="animal-item">
-          <img src="images/koala-tn.png" alt="Koala">
-          <span class="animal-name">Koala</span>
-        </a>
-        <a href="lion.html" class="animal-item">
-          <img src="images/lion-tn.png" alt="Lion">
-          <span class="animal-name">Lion</span>
-        </a>
-        <a href="monkey.html" class="animal-item">
-          <img src="images/monkey-tn.png" alt="Monkey">
-          <span class="animal-name">Monkey</span>
-        </a>
-        <a href="panda.html" class="animal-item">
-          <img src="images/panda-tn.png" alt="Panda">
-          <span class="animal-name">Panda</span>
-        </a>
-        <a href="tiger.html" class="animal-item">
-          <img src="images/tiger-tn.png" alt="Tiger">
-          <span class="animal-name">Tiger</span>
-        </a>
-        <a href="warthog.html" class="animal-item">
-          <img src="images/warthog-tn.png" alt="Warthog">
-          <span class="animal-name">Warthog</span>
-        </a>
-        <a href="elephant.html" class="animal-item">
-          <img src="images/elephant-tn.png" alt="Elephant">
-          <span class="animal-name">Elephant</span>
-        </a>
-        <a href="giraffe.html" class="animal-item">
-          <img src="images/giraffe-tn.png" alt="Giraffe">
-          <span class="animal-name">Giraffe</span>
-        </a>
-        <a href="gemsbok.html" class="animal-item">
-          <img src="images/gemsbok-tn.png" alt="Gemsbok">
-          <span class="animal-name">Gemsbok</span>
-        </a>
-      </div>
-
+    <div id="animal-thumbnails">
+      <a href="gorilla.html" class="animal-item">
+        <img src="images/gorilla-tn.png" alt="Gorilla">
+        <span class="animal-name">Gorilla</span>
+      </a>
+      <a href="koala.html" class="animal-item">
+        <img src="images/koala-tn.png" alt="Koala">
+        <span class="animal-name">Koala</span>
+      </a>
+      <a href="lion.html" class="animal-item">
+        <img src="images/lion-tn.png" alt="Lion">
+        <span class="animal-name">Lion</span>
+      </a>
+      <a href="monkey.html" class="animal-item">
+        <img src="images/monkey-tn.png" alt="Monkey">
+        <span class="animal-name">Monkey</span>
+      </a>
+      <a href="panda.html" class="animal-item">
+        <img src="images/panda-tn.png" alt="Panda">
+        <span class="animal-name">Panda</span>
+      </a>
+      <a href="tiger.html" class="animal-item">
+        <img src="images/tiger-tn.png" alt="Tiger">
+        <span class="animal-name">Tiger</span>
+      </a>
+      <a href="warthog.html" class="animal-item">
+        <img src="images/warthog-tn.png" alt="Warthog">
+        <span class="animal-name">Warthog</span>
+      </a>
+      <a href="elephant.html" class="animal-item">
+        <img src="images/elephant-tn.png" alt="Elephant">
+        <span class="animal-name">Elephant</span>
+      </a>
+      <a href="giraffe.html" class="animal-item">
+        <img src="images/giraffe-tn.png" alt="Giraffe">
+        <span class="animal-name">Giraffe</span>
+      </a>
+      <a href="gemsbok.html" class="animal-item">
+        <img src="images/gemsbok-tn.png" alt="Gemsbok">
+        <span class="animal-name">Gemsbok</span>
+      </a>
     </div>
   </div>
 
