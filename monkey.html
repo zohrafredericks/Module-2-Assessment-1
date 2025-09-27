@@ -1,7 +1,7 @@
 
 
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,8 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-#main-content img { margin-top:-2cm; }
-p { margin-top:2.5cm; }
+body { font-family:'Baloo 2', cursive; background:#f5f5f5; margin:0; padding:0; }
+#header { text-align:center; padding:15px; background: rgba(243,210,93,0.9); }
+#header img { max-height:80px; }
+#tabs-top, #tabs-bottom { display:flex; justify-content:space-around; background:forestgreen; flex-wrap:wrap; }
+#tabs-top a, #tabs-bottom a { flex:1; padding:12px 0; text-align:center; color:white; font-weight:bold; text-decoration:none; transition:background 0.3s; }
+#tabs-top a:hover, #tabs-bottom a:hover { background: darkgreen; }
+#tabs-bottom { position:fixed; bottom:0; width:100%; z-index:3; }
+#main-content { max-width:900px; margin:60px auto 60px auto; padding:20px; background: rgba(255,255,255,0.9); border-radius:10px; text-align:center; }
+#main-content img { width:60%; max-width:400px; height:auto; object-fit:cover; border-radius:10px; border:3px solid forestgreen; margin-bottom:15px; margin-top:-2cm; }
+h1 { color:#572800; margin-bottom:20px; }
+p { line-height:1.8; color:#131313; margin-top:2.5cm; font-size:1.15rem; text-align:left; }
 </style>
 </head>
 <body>
@@ -27,7 +36,7 @@ p { margin-top:2.5cm; }
 <h1>Monkey</h1>
 <img src="images/monkey.jpg" alt="Monkey">
 <p>
-Monkeys are intelligent primates known for their playful behavior and social groups. They eat fruits, insects, and sometimes small animals.
+Monkeys are primates known for their agility, intelligence, and social behavior. They live in troops and eat fruits, leaves, insects, and small animals depending on the species.
 </p>
 </div>
 <div id="tabs-bottom">
