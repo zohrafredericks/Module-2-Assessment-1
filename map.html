@@ -2,50 +2,116 @@
 
 
 
- 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Map - Pine City Zoo</title>
-  
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
-  
-  <!-- Master CSS -->
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map - Pine City Zoo</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Master CSS -->
+<link rel="stylesheet" href="style.css">
+
+<style>
+body { font-family: 'Baloo 2', cursive; margin:0; padding:0; background:#f5f5f5; }
+
+#header { text-align:center; padding:15px; background-color: rgba(243,210,93,0.9); }
+#header img { max-height:80px; }
+
+#tabs-top, #tabs-bottom {
+    display:flex;
+    justify-content:space-around;
+    background:forestgreen;
+    flex-wrap:wrap;
+    z-index:10;
+}
+
+#tabs-top a, #tabs-bottom a, .tab-heading {
+    flex:1;
+    padding:12px 0;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    transition:background 0.3s;
+}
+
+#tabs-top a:hover, #tabs-bottom a:hover { background: darkgreen; }
+#tabs-bottom { position:fixed; bottom:0; width:100%; z-index:3; }
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 80px auto 140px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#main h1 {
+    color: #572800;
+    margin-bottom: 10px;
+}
+
+#main p {
+    font-size: 1.1rem;
+    color: #131313;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+#zoo-map {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid forestgreen;
+    border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #main { margin: 60px 10px 100px 10px; padding: 15px; }
+}
+
+@media (max-width: 480px) {
+    #main { margin: 50px 5px 100px 5px; padding: 10px; }
+    #zoo-map { width: 100%; }
+}
+</style>
 </head>
 <body id="map-page">
 
-  <!-- Header -->
-  <div id="header">
-    <img src="images/logo.png" alt="Pine City Zoo Logo">
-  </div>
+<!-- Header -->
+<div id="header">
+  <img src="images/logo.png" alt="Pine City Zoo Logo">
+</div>
 
-  <!-- Top Tabs: PLACES | ANIMALS | MAP -->
-  <div id="tabs-top">
-    <a href="places.html">PLACES</a>
-    <span class="tab-heading">ANIMALS</span>
-    <a href="map.html">MAP</a>
-  </div>
+<!-- Top Tabs -->
+<div id="tabs-top">
+  <a href="places.html">PLACES</a>
+  <span class="tab-heading">MAP</span>
+  <a href="index.html">HOME</a>
+</div>
 
-  <!-- Main Content -->
-  <div id="main">
-    <div id="content">
-      <h1>Zoo Map</h1>
-      
-      <!-- Map Image -->
-      <img src="images/map.png" alt="Pine City Zoo Map" id="zoo-map">
+<!-- Main Content -->
+<div id="main">
+  <h1>Welcome to Pine City Zoo!</h1>
+  <p>Use this map to explore all our amazing animals and attractions. Click on any area to learn more about the exhibits.</p>
 
-    </div>
-  </div>
+  <!-- Zoo Map -->
+  <img src="images/map.png" alt="Pine City Zoo Map" id="zoo-map">
+</div>
 
-  <!-- Bottom Tabs -->
-  <div id="tabs-bottom">
-    <a href="weather.html">WEATHER</a>
-    <a href="feedback.html">FEEDBACK</a>
-  </div>
+<!-- Bottom Tabs -->
+<div id="tabs-bottom">
+  <a href="weather.html">WEATHER</a>
+  <a href="feedback.html">FEEDBACK</a>
+</div>
 
 </body>
 </html>
