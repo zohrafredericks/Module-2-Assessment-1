@@ -1,40 +1,89 @@
 
-   
-  <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weather - Pine City Zoo</title>
+
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Master CSS -->
 <link rel="stylesheet" href="style.css">
+
+<style>
+#main-content {
+    max-width: 900px;
+    margin: 80px auto 100px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#main-content img {
+    width: 60%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid forestgreen;
+    display: block;
+    margin: 0 auto 15px auto; /* Consistent with animal images */
+}
+
+#main-content h1 {
+    color: #572800;
+    margin-bottom: 20px;
+}
+
+#main-content p {
+    line-height: 1.8;
+    color: #131313;
+    font-size: 1.15rem;
+    text-align: left;
+    margin-top: 20px;
+}
+
+@media (max-width:768px) {
+    #main-content img { width: 80%; max-width: 300px; }
+}
+
+@media (max-width:480px) {
+    #main-content img { width: 100%; max-width: 250px; }
+}
+</style>
 </head>
-<body id="weather-page">
+<body>
 
 <!-- Header -->
 <div id="header">
-  <img src="images/logo.png" alt="Pine City Zoo Logo">
+    <img src="images/logo.png" alt="Pine City Zoo Logo">
 </div>
 
 <!-- Top Tabs -->
 <div id="tabs-top">
-  <a href="places.html">PLACES</a>
-  <a href="index.html" class="tab-heading">ANIMALS</a>
-  <a href="map.html">MAP</a>
+    <a href="index.html">HOME</a>
+    <span class="tab-heading"><a href="index.html" style="color:white; text-decoration:none;">ANIMALS</a></span>
+    <a href="places.html">PLACES</a>
 </div>
 
 <!-- Main Content -->
-<div id="main">
-  <div id="content">
-    <h1>Weather</h1>
-    <p>Check the current weather at Pine City Zoo to plan your visit.</p>
-  </div>
+<div id="main-content">
+    <h1>Weather at Pine City Zoo</h1>
+    <img src="images/sky.jpg" alt="Sky over Pine City Zoo">
+    <p>
+        The sky at Pine City Zoo often brings beautiful views, from bright sunny days to dramatic clouds. 
+        Check the weather before your visit to enjoy the zoo at its best!
+    </p>
 </div>
 
 <!-- Bottom Tabs -->
 <div id="tabs-bottom">
-  <a href="weather.html">WEATHER</a>
-  <a href="feedback.html">FEEDBACK</a>
+    <a href="weather.html">WEATHER</a>
+    <a href="feedback.html">FEEDBACK</a>
 </div>
 
 </body>
