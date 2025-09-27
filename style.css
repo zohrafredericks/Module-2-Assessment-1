@@ -28,20 +28,19 @@ body, html {
     max-height: 80px;
 }
 
-/* ------------------------------- Top Tabs (including non-clickable ANIMALS) --------------------------------*/
+/* ------------------------------- Top Tabs --------------------------------*/
 #tabs-top {
     display: flex;
-    justify-content: center;  /* Center tabs as a group */
+    justify-content: center;
     background: forestgreen;
-    gap: 20px;                /* Space between tabs */
+    gap: 20px;
     flex-wrap: wrap;
     z-index: 10;
 }
 
-/* All tabs, including non-clickable */
 #tabs-top a,
 #tabs-top .tab-heading {
-    flex: 1;                  /* Equal width for each tab */
+    flex: 1;
     padding: 12px 0;
     text-align: center;
     font-weight: bold;
@@ -50,13 +49,12 @@ body, html {
     text-decoration: none;
 }
 
-/* Hover effect for clickable links only */
 #tabs-top a:hover {
     background: darkgreen;
     border-radius: 6px;
 }
 
-/* ------------------------------- Bottom Tabs --------------------------------*/
+/* ------------------------------- Bottom Tabs (Weather & Feedback Only) --------------------------------*/
 #tabs-bottom {
     display: flex;
     justify-content: space-around;
@@ -87,180 +85,43 @@ body, html {
     background: darkgreen;
 }
 
-/* ------------------------------- Section Headings --------------------------------*/
-.section-title {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #572800;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-/* ------------------------------- Animal & Place Thumbnails Grid --------------------------------*/
-#animal-thumbnails, #place-thumbnails {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    margin: 0 auto 120px auto;
-    padding: 20px;
-    max-width: 1000px;
-}
-
-.animal-item, .place-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.animal-item img, .place-item img {
-    width: 120px;
-    height: auto;
-    border-radius: 8px;
-    border: 3px solid forestgreen;
-}
-
-.animal-item:hover, .place-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    cursor: pointer;
-}
-
-.animal-name, .place-name {
-    margin-top: 8px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-align: center;
-}
-
 /* ------------------------------- Main Content Wrapper --------------------------------*/
-#main, #main-content, .place-section {
-    max-width: 1200px;
-    margin: 20px auto 140px auto;
+#main-content {
+    max-width: 900px;
+    margin: 60px auto 60px auto; /* space from top and bottom */
     padding: 20px;
     background: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
     font-family: 'Baloo 2', cursive;
+    text-align: center;
 }
 
-/* ------------------------------- Large Images Sections (Animals/Places Pages) --------------------------------*/
-#main-content img, .place-section img {
-    width: 100%;
-    max-width: 800px;
+/* ------------------------------- Animal Images & Text --------------------------------*/
+#main-content img {
+    width: 60%;
+    max-width: 400px;
     height: auto;
+    object-fit: cover;
     border-radius: 10px;
     border: 3px solid forestgreen;
+    margin-bottom: 15px;
+    margin-top: -2cm; /* move image up 2cm */
+}
+
+#main-content h1 {
+    color: #572800;
     margin-bottom: 20px;
 }
 
-h1, h2, h3 {
-    font-family: 'Baloo 2', cursive;
-    color: #572800;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-p {
-    line-height: 1.5;
+#main-content p {
+    line-height: 1.8;
     color: #131313;
+    margin-top: -2cm; /* move text up 2cm */
+    font-size: 1.15rem;
+    text-align: left;
 }
 
-/* ------------------------------- Info Box Styling (Places & Locations) --------------------------------*/
-a.info-box {
-    text-decoration: none;
-    background: rgba(255, 225, 55, 0.8);
-    width: 90%;
-    display: block;
-    margin: 12px auto;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background 0.3s;
-}
-
-a.info-box:hover {
-    background: rgba(255, 225, 55, 1);
-}
-
-.info-box img {
-    height: 70px;
-    margin: 10px;
-    float: left;
-    border: 3px solid #8B5E3C;
-    border-radius: 8px;
-}
-
-.info-box h3 {
-    color: #572800;
-    text-transform: uppercase;
-    margin: 0 0 5px 0;
-}
-
-.info-box p {
-    margin: 0;
-}
-
-/* ------------------------------- Weather Table --------------------------------*/
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-td {
-    padding: 5px;
-    text-align: center;
-}
-
-.info-box-weather-icon {
-    width: 40px;
-    height: 40px;
-}
-
-/* ------------------------------- Feedback Form Inputs --------------------------------*/
-input[type="text"], input[type="email"], textarea {
-    width: 95%;
-    padding: 8px;
-    margin: 5px 0;
-    border: 2px solid forestgreen;
-    border-radius: 6px;
-    font-family: 'Baloo 2', cursive;
-}
-
-textarea {
-    height: 100px;
-    resize: none;
-}
-
-a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background: forestgreen;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background 0.3s;
-}
-
-a.button:hover {
-    background: darkgreen;
-}
-
-/* ------------------------------- Map Page Images --------------------------------*/
-#map-page #main #content img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-/* ------------------------------- Responsive --------------------------------*/
+/* ------------------------------- Responsive Adjustments --------------------------------*/
 @media (max-width: 768px) {
     #tabs-top, #tabs-bottom {
         flex-direction: column;
@@ -271,31 +132,15 @@ a.button:hover {
         flex: unset;
     }
 
-    #animal-thumbnails, #place-thumbnails {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 15px;
-    }
-
-    .animal-item img, .place-item img {
-        width: 100px;
-    }
-
-    .animal-name, .place-name {
-        font-size: 1rem;
+    #main-content img {
+        width: 80%;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 480px) {
-    #animal-thumbnails, #place-thumbnails {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-        gap: 10px;
-    }
-
-    .animal-item img, .place-item img {
-        width: 80px;
-    }
-
-    .animal-name, .place-name {
-        font-size: 0.95rem;
+    #main-content img {
+        width: 100%;
+        max-width: 250px;
     }
 }
