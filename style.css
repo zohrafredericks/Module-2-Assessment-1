@@ -1,5 +1,6 @@
 
 
+
 /* ------------------------------- Global Reset --------------------------------*/
 * {
     margin: 0;
@@ -122,7 +123,6 @@ body, html {
     max-width: 1200px;
     margin: 120px auto 140px auto;
     padding: 20px;
-    background: rgba(255,255,255,0.9);
     border-radius: 10px;
 }
 
@@ -188,5 +188,35 @@ body, html {
     }
     .animal-name {
         font-size: 0.95rem;
+    }
+}
+
+/* ------------------------------- Mobile Header Fix --------------------------------*/
+@media (max-width: 768px) {
+    #header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #header img {
+        max-height: 60px;
+        margin-bottom: 8px;
+    }
+
+    #header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        word-wrap: break-word;
+    }
+}
+
+/* ------------------------------- Mobile Tabs Text Adjustment --------------------------------*/
+@media (max-width: 480px) {
+    #tabs-top a, #tabs-top .tab-heading,
+    #tabs-bottom a {
+        font-size: 0.9rem; /* slightly smaller text on small phones */
+        padding: 10px 0;   /* reduce vertical padding for better fit */
     }
 }
