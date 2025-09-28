@@ -1,4 +1,10 @@
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +19,24 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-body { font-family: 'Baloo 2', cursive; margin:0; padding:0; background:#f5f5f5; }
-#header { text-align:center; padding:15px; background-color: rgba(243,210,93,0.9); }
+body {
+    font-family: 'Baloo 2', cursive;
+    margin:0;
+    padding:0;
+    /* Blur map as background */
+    background: url('images/map-blur.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header */
+#header {
+    text-align:center;
+    padding:15px;
+    background-color: rgba(243,210,93,0.9);
+}
 #header img { max-height:80px; }
 
+/* Top and Bottom Tabs */
 #tabs-top, #tabs-bottom {
     display:flex;
     justify-content:space-around;
@@ -38,14 +58,16 @@ body { font-family: 'Baloo 2', cursive; margin:0; padding:0; background:#f5f5f5;
 #tabs-top a:hover, #tabs-bottom a:hover { background: darkgreen; }
 #tabs-bottom { position:fixed; bottom:0; width:100%; z-index:3; }
 
+/* Main Content */
 #main {
     max-width:1200px;
     margin:120px auto 140px auto;
     padding:20px;
-    background: rgba(255,255,255,0.9);
+    /* background removed so map shows behind thumbnails */
     border-radius:10px;
 }
 
+/* Animal Thumbnails */
 #animal-thumbnails {
     display:flex;
     flex-wrap:wrap;
@@ -87,6 +109,36 @@ body { font-family: 'Baloo 2', cursive; margin:0; padding:0; background:#f5f5f5;
     #animal-thumbnails { gap:10px; }
     .animal-item img { width:100px; height:100px; }
     .animal-name { font-size:0.95rem; }
+}
+
+/* Mobile Header Fix */
+@media (max-width: 768px) {
+    #header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #header img {
+        max-height: 60px;
+        margin-bottom: 8px;
+    }
+
+    #header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        word-wrap: break-word;
+    }
+}
+
+/* Mobile Tabs Text Adjustment */
+@media (max-width: 480px) {
+    #tabs-top a, #tabs-top .tab-heading,
+    #tabs-bottom a {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
 }
 </style>
 </head>
