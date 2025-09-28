@@ -1,7 +1,8 @@
 
 
 
-/* ------------------------------- Global Reset --------------------------------*/
+
+   /* ------------------------------- Global Reset --------------------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -102,7 +103,7 @@ body, html {
     border-radius: 10px;
     border: 3px solid forestgreen;
     display: block;
-    margin: 0 auto 20px auto; /* natural spacing below image */
+    margin: 0 auto 20px auto;
 }
 
 #main-content h1 {
@@ -113,7 +114,7 @@ body, html {
 #main-content p {
     line-height: 1.8;
     color: #131313;
-    margin-top: 10px; /* natural spacing above text */
+    margin-top: 10px;
     font-size: 1.15rem;
     text-align: left;
 }
@@ -124,6 +125,7 @@ body, html {
     margin: 120px auto 140px auto;
     padding: 20px;
     border-radius: 10px;
+    /* background removed to show blur-map */
 }
 
 #animal-thumbnails {
@@ -216,7 +218,7 @@ body, html {
 @media (max-width: 480px) {
     #tabs-top a, #tabs-top .tab-heading,
     #tabs-bottom a {
-        font-size: 0.9rem; /* slightly smaller text on small phones */
-        padding: 10px 0;   /* reduce vertical padding for better fit */
+        font-size: 0.9rem;
+        padding: 10px 0;
     }
 }
