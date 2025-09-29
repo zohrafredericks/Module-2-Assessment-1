@@ -1,6 +1,7 @@
 
 
 
+
 /* ------------------------------- Global Reset --------------------------------*/
 * {
     margin: 0;
@@ -84,19 +85,19 @@ body, html {
     background: darkgreen;
 }
 
-/* ------------------------------- Main Content Wrapper (Individual Animals) --------------------------------*/
+/* ------------------------------- Main Content Wrapper (Individual Animals & Map) --------------------------------*/
 #main-content {
     max-width: 900px;
     margin: 60px auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
+    /* no background to show blur-map */
     border-radius: 10px;
     text-align: center;
 }
 
 #main-content img {
     width: 60%;
-    max-width: 400px;
+    max-width: 400px; /* animals default width */
     height: auto;
     object-fit: cover;
     border-radius: 10px;
@@ -167,7 +168,7 @@ body, html {
     }
     #main-content img {
         width: 80%;
-        max-width: 300px;
+        max-width: 600px; /* map can expand more */
     }
     .animal-item img {
         width: 120px;
@@ -181,7 +182,7 @@ body, html {
 @media (max-width: 480px) {
     #main-content img {
         width: 100%;
-        max-width: 250px;
+        max-width: 100%; /* map fills screen */
     }
     .animal-item img {
         width: 100px;
